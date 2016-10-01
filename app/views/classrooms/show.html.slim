@@ -1,13 +1,13 @@
 h2 class="title is-3"
   'Aluno: 
-  = @student.name
+  = @classroom.student.name
 
 p
   strong
-    'Descrição: 
-  = @student.register_number
+    'Curso: 
+  = @classroom.course.name
 
-p 
-  strong
-    'Status
-  = @student.status  
+p
+  strong 
+    'Registrado em:
+  = l(@classroom.entry_at.to_date)  

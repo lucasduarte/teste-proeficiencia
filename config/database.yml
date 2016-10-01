@@ -23,4 +23,4 @@ production:
   <<: *default
   database: teste-proeficiencia_production
   username: teste-proeficiencia
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password: <%= ENV['TESTE-PROEFICIENCIA_DATABASE_PASSWORD'] %>
