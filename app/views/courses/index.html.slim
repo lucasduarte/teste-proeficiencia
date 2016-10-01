@@ -1,6 +1,6 @@
 h2 class="title is-2" 
   = "Lista de #{I18n.t('activerecord.models.course')}s"
-
+= link_to 'Novo Curso', new_course_path, class: 'button is-primary is-pulled-right'
 table.table
   thead
     tr

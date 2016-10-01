@@ -31,7 +31,7 @@ gem "slim-rails"
 gem "enumerate_it"
 gem "responders"
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
-gem 'rails-assets-font-awesome', source: 'https://rails-assets.org'
+gem "font-awesome-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -63,6 +63,8 @@ GEM
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     ffi (1.9.14)
+    font-awesome-rails (4.6.3.1)
+      railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -110,7 +112,6 @@ GEM
       railties (= 5.0.0.1)
       sprockets-rails (>= 2.0.0)
     rails-assets-bulma (0.2.1)
-    rails-assets-font-awesome (4.6.3)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
@@ -204,6 +205,7 @@ DEPENDENCIES
   enumerate_it
   factory_girl
   factory_girl_rails
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -211,7 +213,6 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-assets-bulma!
-  rails-assets-font-awesome!
   rails-i18n (~> 5.0.0)
   responders
   rspec-rails (~> 3.5)
