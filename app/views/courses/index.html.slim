@@ -1,0 +1,22 @@
+h1 class="title is-2" 
+  = "Lista de #{I18n.t('activerecord.models.course')}s"
+
+table.table
+  thead
+    tr
+      th= I18n.t 'activerecord.attributes.course.name'
+      th= I18n.t 'activerecord.attributes.course.description'
+      th= I18n.t 'activerecord.attributes.course.status'
+      th= 'Ações'
+  tbody
+    - @courses.each do |course|
+      tr
+        td = course.name
+        td = course.description
+        td = course.status
+        td
+          = link_to "Exibir", course
+          '&nbsp;
+          = link_to "Editar", edit_course_path(course)
+          '&nbsp;
+          = link_to "Excluir", course, data: { confirm: "Tem certeza?" }, method: :delete   
