@@ -28,8 +28,9 @@ html
               span       
 
             div class="nav-right nav-menu"
-              = link_to 'Cursos', courses_path, class: 'nav-item'  
+              = link_to "#{I18n.t('activerecord.models.course')}", courses_path, class: 'nav-item'  
 
     section class="section app-main"
       div.container
+        == render partial: 'shared/flash_messages', flash: flash
         = yield
