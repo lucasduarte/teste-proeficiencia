@@ -1,9 +1,10 @@
 = form_for @course do |f|
   - if @course.errors.any?
-    h2 = "#{pluralize(@course.error.count, "erro")}"
-    ul
-      - @course.errors.full_messages.each do |message|
-        li = message
+    div class="notification is-danger"
+      h2 = "#{pluralize(@course.error.count, "erro")}"
+      ul
+        - @course.errors.full_messages.each do |message|
+          li = message
 
   = f.label :name, class: 'label'
   p.control

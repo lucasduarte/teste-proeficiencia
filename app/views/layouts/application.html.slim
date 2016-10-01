@@ -8,6 +8,29 @@ html
     = csrf_meta_tags
 
   body
+    section class="hero is-primary"
+      div.hero-head
+        div.container
+          nav.nav
+            div.nav-left
+              a class="nav-item is brand" href="#"
+                h1 class='title is-2'
+                  '[iS]
+
+            div.nav-center
+              a.nav-item href="#"
+                span.icon
+                  i class="fa fa-github"
+                  
+            span.nav-toggle
+              span
+              span
+              span       
+
+            div class="nav-right nav-menu"
+              = link_to "#{I18n.t('activerecord.models.course')}", courses_path, class: 'nav-item'  
+
     section class="section app-main"
       div.container
+        == render partial: 'shared/flash_messages', flash: flash
         = yield

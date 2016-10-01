@@ -17,31 +17,19 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
+    @course.save
 
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'Curso cadastrado com sucesso!' }
-      else
-        format.html { render :new }
-      end
-    end
+    respond_with(@course)
   end
 
   def update
-    respond_to do |format|
-      if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Curso atualizado com sucesso!' }
-      else
-        format.html { render :edit }
-      end
-    end
+    @course.update(course_params)
+    respond_with(@course)
   end
 
   def destroy
     @course.destroy
-    respond_to do |format|
-      format.html { redirect_to courses_url, notice: 'Curso excluído com sucesso!' }
-    end
+    respond_with(@course)
   end
 
   private
