@@ -1,0 +1,21 @@
+= form_for @student do |f|
+  - if @student.errors.any?
+    div class="notification is-danger"
+      h2 = "#{pluralize(@student.error.count, "erro")}"
+      ul
+        - @student.errors.full_messages.each do |message|
+          li = message
+
+  = f.label :name, class: 'label'
+  p.control
+    = f.text_field :name, class: 'input'
+
+  = f.label :register_number, class: 'label'
+  p.control
+    = f.text_field :register_number, class: 'input'
+  
+  = f.label :status, class: 'label'
+  p.control
+    = f.text_field :status, class: 'input'
+  br
+  = f.submit "Salvar", class: 'button is-primary'      

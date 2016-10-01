@@ -1,0 +1,22 @@
+h2 class="title is-2" 
+  = "Lista de #{I18n.t('activerecord.models.student')}s"
+= link_to 'Novo Aluno', new_student_path, class: 'button is-primary is-pulled-right'
+table.table
+  thead
+    tr
+      th= I18n.t 'activerecord.attributes.student.name'
+      th= I18n.t 'activerecord.attributes.student.register_number'
+      th= I18n.t 'activerecord.attributes.student.status'
+      th= 'Ações'
+  tbody
+    - @students.each do |student|
+      tr
+        td = student.name
+        td = student.register_number
+        td = student.status
+        td
+          = link_to "Exibir", student
+          '&nbsp;
+          = link_to "Editar", edit_student_path(student)
+          '&nbsp;
+          = link_to "Excluir", student, data: { confirm: "Tem certeza?" }, method: :delete   

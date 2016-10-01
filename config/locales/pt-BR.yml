@@ -2,11 +2,16 @@ pt-BR:
   activerecord:
     models:
       course: Curso
+      student: Aluno
     attributes:
       course:
         name: "Nome"
         description: "Descrição"
-        status: "Status"  
+        status: "Status" 
+      student:
+        name: "Nome"
+        register_number: "Número de Registro"
+        status: "Status"   
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
