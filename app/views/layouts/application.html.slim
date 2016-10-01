@@ -13,12 +13,12 @@ html
         div.container
           nav.nav
             div.nav-left
-              a class="nav-item is brand" href="#"
+              a class="nav-item is brand" href="/"
                 h1 class='title is-2'
                   '[iS]
 
             div.nav-center
-              a.nav-item href="#"
+              a.nav-item href="https://github.com/lucasduarte/teste-proeficiencia/" target="_blank"
                 span.icon
                   i class="fa fa-github"
                   
@@ -30,6 +30,7 @@ html
             div class="nav-right nav-menu"
               = link_to "#{I18n.t('activerecord.models.course')}", courses_path, class: 'nav-item'  
               = link_to "#{I18n.t('activerecord.models.student')}", students_path, class: 'nav-item'  
+              = link_to "#{I18n.t('activerecord.models.classroom')}", classrooms_path, class: 'nav-item' 
 
     section class="section app-main"
       div.container

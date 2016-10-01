@@ -1,0 +1,21 @@
+div.columns
+  div class="column is-half"
+    = form_for @classroom do |f|
+      - if @classroom.errors.any?
+        div class="notification is-danger"
+          h2 = "#{pluralize(@classroom.errors.count, "erro")}"
+          ul
+            - @classroom.errors.full_messages.each do |message|
+              li = message
+
+      = f.label :student_id, class: 'label'
+      p.control
+        span.select
+          = f.collection_select :student_id, @students, :id, :name, {include_blank: 'Selecione o aluno...'}, { multiple: false }
+
+      = f.label :course_id, class: 'label'
+      p.control
+        span.select
+          = f.collection_select :course_id, @courses, :id, :name, {include_blank: 'Selecione o curso...'}, { multiple: false }
+
+      = f.submit "Salvar", class: 'button is-primary'      

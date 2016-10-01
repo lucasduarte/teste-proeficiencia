@@ -1,21 +1,24 @@
-= form_for @course do |f|
-  - if @course.errors.any?
-    div class="notification is-danger"
-      h2 = "#{pluralize(@course.error.count, "erro")}"
-      ul
-        - @course.errors.full_messages.each do |message|
-          li = message
+div.columns
+  div class="column is-half"
+    = form_for @course do |f|
+      - if @course.errors.any?
+        div class="notification is-danger"
+          h2 = "#{pluralize(@course.errors.count, "erro")}"
+          ul
+            - @course.errors.full_messages.each do |message|
+              li = message
 
-  = f.label :name, class: 'label'
-  p.control
-    = f.text_field :name, class: 'input'
+      = f.label :name, class: 'label'
+      p.control
+        = f.text_field :name, class: 'input'
 
-  = f.label :description, class: 'label'
-  p.control
-    = f.text_field :description, class: 'input'
-  
-  = f.label :status, class: 'label'
-  p.control
-    = f.text_field :status, class: 'input'
-  br
-  = f.submit "Salvar", class: 'button is-primary'      
+      = f.label :description, class: 'label'
+      p.control
+        = f.text_field :description, class: 'input'
+      
+      = f.label :status, class: 'label'
+      p.control
+        span.select
+          = f.select :status, status_value
+      br
+      = f.submit "Salvar", class: 'button is-primary'      

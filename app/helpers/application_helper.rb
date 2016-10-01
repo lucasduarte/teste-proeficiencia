@@ -13,4 +13,8 @@ module ApplicationHelper
         flash_type.to_s
     end
   end
+
+  def status_value
+    StatusValue.to_a
+  end
 end

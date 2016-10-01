@@ -3,6 +3,7 @@ pt-BR:
     models:
       course: Curso
       student: Aluno
+      classroom: Classe
     attributes:
       course:
         name: "Nome"
@@ -11,7 +12,7 @@ pt-BR:
       student:
         name: "Nome"
         register_number: "Número de Registro"
-        status: "Status"   
+        status: "Status"     
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

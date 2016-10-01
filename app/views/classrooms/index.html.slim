@@ -1,0 +1,20 @@
+h2 class="title is-2" 
+  = "Lista de #{I18n.t('activerecord.models.classroom')}s"
+= link_to 'Adicionar Classe', new_classroom_path, class: 'button is-primary is-pulled-right'
+table.table
+  thead
+    tr
+      th= I18n.t 'activerecord.models.student'
+      th= I18n.t 'activerecord.models.course'
+      th= 'Ações'
+  tbody
+    - @classrooms.each do |classroom|
+      tr
+        td = classroom.student.name
+        td = classroom.course.name 
+        td
+          = link_to "Exibir", classroom
+          '&nbsp;
+          = link_to "Editar", edit_classroom_path(classroom)
+          '&nbsp;
+          = link_to "Excluir", classroom, data: { confirm: "Tem certeza?" }, method: :delete   
